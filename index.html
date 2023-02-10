@@ -12,10 +12,24 @@
     <h1>Welcome To JS DOM Events</h1>
     <!-- note: the string inside onclick is in double quotation . so make sure your string inside console.log is in single quotation. otherwise it will show error  -->
     <button onclick="console.log('clickd the button')">Click Me</button>
-    <button onclick="console.log('subscribed successfully')">Subscribe</button>
+    <button onclick="console.log('subscribed successfully')">Subscribe</button> <br>
+<br><br>
+    <!-- add onclick handler directly via js  -->
+
+    <!-- 1. here, onclik is given directly  -->
+    <button onclick="document.body.style.backgroundColor = 'yellow' ">Make Yellow</button>
+    <!-- 2. onclick is handled by external js file  -->
+    <!-- here, we need to call the function. ex: makeBlue()  -->
+    <button onclick="makeBlue()">Make Blue</button>
+    <!-- 3(1): here makeRed function is set on onclick. it is not called but just set. check the code. -->
+    <button id="button-red">Make Red</button>
+    <!-- 3(2) :  -->
+    <button id ="button-purple">Make Purple</button>
 
     <!-- js file  -->
     <script src="js/events.js"></script>
+    <script>   
+    </script>
 </body>
 
 </html>
