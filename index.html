@@ -34,9 +34,34 @@
     <button id="make-golden-rod">Make Golden Rod</button>
 
 
+
+        <!-- final dom event handling  -->
+        <h2 id="dev-status">Let's Become Developers</h2>
+        <button id="dev-status-btn">Dev status change Button</button>
+<br><br>
+
+    <!-- updating a normal text from taking data from an input field  -->
+    <p id="normal-data">Hi, I am MURR</p>
     <!-- js file  -->
     <script src="js/events.js"></script>
+    <input type="text" name="" id="input-field">
+    <button id="update-button">Update</button>
     <script>   
+    const devStatusButton = document.getElementById("dev-status-btn").addEventListener('click', function(){
+        const devStatus = document.getElementById("dev-status");
+        devStatus.innerText = 'First Learn Development.Then Become Developer';
+    });
+
+    // update button event add listener.
+    const updateButton = document.getElementById("update-button").addEventListener('click', function(){
+        const inputField = document.getElementById("input-field");
+        const inputText = inputField.value;
+
+        const displayText =document.getElementById("normal-data");
+        displayText.innerText = inputText;
+        inputField.value = '';
+    })
+
     </script>
 </body>
 
