@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+</head>
+
+<body>
+    <h1>Let's explore some more events</h1>
+    <button id="btn-event">Events</button>
+    <input type="text" name="" id="input-text">
+
+    <!-- script tag  -->
+    <script>
+        // button click event
+        document.getElementById("btn-event").addEventListener('click', function () {
+            console.log("btn clicked");
+        });
+        // input field focus event
+        // document.getElementById("input-text").addEventListener('focus', function(){
+        //     console.log("input field focus");
+        // });
+        // input field blur event
+        // document.getElementById("input-text").addEventListener('blur', function(){
+        //     console.log("input field blurr");
+        // });
+        // input field: keyup,keypress,keydown event  with event function
+        // keyup event
+        document.getElementById("input-text").addEventListener('keyup', function (event) {
+            console.log(event.target.value);
+        });
+        // keydown
+        // document.getElementById("input-text").addEventListener('keydown', function (event) {
+        //     console.log(event.target.value);
+        // });
+        // keypress
+        // document.getElementById("input-text").addEventListener('keypress', function (event) {
+        //     console.log(event.target.value);
+        // });
+    </script>
+</body>
+
+</html>
