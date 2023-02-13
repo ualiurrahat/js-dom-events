@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github delete operation</title>
+</head>
+
+<body>
+    <!-- task    -->
+    <!-- if 'delete' is written inside input text, the delete button will be able and secret-info will vanish . if any other thing except 'delete' is written, button will remain disabled -->
+    <h1 id="secret-info">Secret Data</h1>
+    <input type="text" name="" id="delete-confirm" placeholder="type 'delete' here">
+    <button id="btn-delete" disabled>Delete</button>
+
+    <!-- script tag  -->
+    <script>
+        // event to show button when input data is 'delete'
+
+        // step 1: input field event add.
+        document.getElementById("delete-confirm").addEventListener('keyup', function (event) {
+            // take text from input field
+            const text = event.target.value;
+            // access delete button
+            const deleteButton = document.getElementById("btn-delete");
+            // check text
+            if (text === 'delete') {
+                // got the exact text. off disabled property of deleteButton
+                deleteButton.removeAttribute('disabled');
+            }
+            else {
+                // for any other text, disable the button
+                deleteButton.setAttribute('disabled', true);
+            }
+        });
+        // event to hide secret-info
+        document.getElementById("btn-delete").addEventListener('click', function () {
+            const secretInfo = document.getElementById("secret-info");
+            secretInfo.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
