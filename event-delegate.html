@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegates</title>
+</head>
+
+<body>
+    <h1>Explore Event Delegate</h1>
+    <section>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Tempora, molestiae explicabo!</li>
+            <li class="item">Quam, nulla alias.</li>
+            <li class="item">Vitae, vero aperiam!</li>
+            <li class="item">Blanditiis, explicabo totam?</li>
+            <li class="item">Aliquam, accusamus velit.</li>
+        </ul>
+        <button id="btn-add">Add Item</button>
+    </section>
+    <!-- script tag  -->
+    <script>
+        // remove event: event added to the child.
+        // const items = document.getElementsByClassName("item");
+        // for (const item of items) {
+        //     item.addEventListener('click', function (event) {
+        //         // removing current item through its parent child
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        // event delegation code: the same event of the upper code is added to the parent node.
+        document.getElementById("list-container").addEventListener('click', function (event) {
+            event.target.parentNode.removeChild(event.target);
+        });
+
+
+        // add new item event with add button
+        document.getElementById('btn-add').addEventListener('click', function () {
+            const li = document.createElement("li");
+            li.innerText = 'New Item Added';
+            // adding item class to li. though item class is added.
+            // but we can remove these brande new items just like we to other existing items in item class.
+            // why?? cause we add the event in the child of list-container.
+            // so we updated the code and add the events in the list-container i.e. parent of times.
+
+            // event delegates: we should add event to parent. not to the child.
+            li.classList.add('item');
+            const listContainer = document.getElementById('list-container');
+            listContainer.appendChild(li);
+        })
+    </script>
+</body>
+
+</html>
