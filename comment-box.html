@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Comment</title>
+</head>
+
+<body>
+    <h1>Please add your comment</h1>
+    <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum possimus porro deleniti, atque accusantium
+            voluptatibus aperiam libero, exercitationem optio ea ipsum, quidem nemo explicabo beatae assumenda eligendi
+            facilis voluptas perspiciatis! Libero, facilis? Recusandae et libero commodi maxime nesciunt, doloremque
+            autem corrupti laudantium earum, facilis aut ipsam numquam illum laborum est.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum possimus porro deleniti, atque accusantium
+            voluptatibus aperiam libero, exercitationem optio ea ipsum, quidem nemo explicabo beatae assumenda eligendi
+            facilis voluptas perspiciatis! Libero, facilis? Recusandae et libero commodi maxime nesciunt, doloremque
+            autem corrupti laudantium earum, facilis aut ipsam numquam illum laborum est.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum possimus porro deleniti, atque accusantium
+            voluptatibus aperiam libero, exercitationem optio ea ipsum, quidem nemo explicabo beatae assumenda eligendi
+            facilis voluptas perspiciatis! Libero, facilis? Recusandae et libero commodi maxime nesciunt, doloremque
+            autem corrupti laudantium earum, facilis aut ipsam numquam illum laborum est.</p>
+    </div>
+
+    <textarea name="" id="new-comment-container" cols="60" rows="5"></textarea>
+    <br>
+    <button id="btn-post">post</button>
+
+    <!-- task  -->
+    <!-- create a function so that when post button is clicked. the comment written on the textarea will appear as the 4th comment on the comment div and the textarea will be empty  -->
+
+
+    <!-- js script  -->
+    <script>
+        // step 1 : add event listener to the post button
+        document.getElementById("btn-post").addEventListener('click', function(){
+            // step 2: get comment from the textarea
+            const commentBox = document.getElementById("new-comment-container");
+            const newComment = commentBox.value;
+
+            // step 3: display new comment on the comment div
+
+            // get the comment div
+            const commentContainer = document.getElementById("comment-container");
+            // create a new paragraph element.
+            const p = document.createElement('p');
+            // set comment as innertext of p
+            p.innerText = newComment;
+            // append p as child of comment div
+            commentContainer.appendChild(p);
+
+            // step 4: erase textarea(reset)
+            commentBox.value = "";
+            });
+            
+    </script>
+</body>
+
+</html>
